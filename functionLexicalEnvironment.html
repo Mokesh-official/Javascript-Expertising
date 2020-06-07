@@ -1,0 +1,28 @@
+<html>
+<body>
+<script>
+
+let makeCounter = () => {
+  let count = 0; 
+  return function() { //count is private to this function
+    console.log(++count);
+  }
+}
+let counter = makeCounter(); // closure
+let counter1 = makeCounter(); // creates new lexical environment
+// console.log(counter)
+counter();
+counter();
+counter1(); // executes in new lexical environment 
+
+
+// function User () {
+  //   this.fname = 'Mokesh',
+  //   this.lname = 'S'
+  // }
+  // // let user = new User();
+  // console.log(User)
+
+</script>
+</body>
+</html>

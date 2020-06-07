@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <script>
+      function getData (context, args) {
+        console.log(debounce)
+        console.log('api call' + name)
+      }
+       const debounce = (() => {
+        console.log('asd')
+        let timer
+        return function () {
+          let context = this
+          let args = arguments
+          clearTimeout(timer)
+          timer = setTimeout(() => { getData.apply(context, args) }, 800)
+        }
+      }) ()
+    </script>
+  </head>
+  <body>
+  <input type="text" onkeyup="debounce('name')" />
+  </body>
+
+</html>

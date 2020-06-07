@@ -1,0 +1,153 @@
+<html>
+<body>
+<script>
+let users = [
+    {
+      "contactId": 277,
+      "firstName": "Enterprise",
+      "lastName": "test",
+      "email": "KANIMOZHI.S@TRINGAPPS.COM",
+      "phoneNumber": "1234567890",
+      "jobTitle": "Administrative Services",
+      "companyName": "At@143322^^&..###",
+      "companySize": 100,
+      "country": "United States",
+      "additionalInfo": "WORLDS by IFGworld™ is an experience for mental wellness ",
+      "status": "pending",
+      "subscriptionDetails": null,
+      "planType": "annually",
+      "price": 250
+    },
+    {
+      "contactId": 274,
+      "firstName": "Enterprise",
+      "lastName": "admin",
+      "email": "tringapps007@gmail.com",
+      "phoneNumber": "9874563210",
+      "jobTitle": "qa testing software trainee",
+      "companyName": "Tringapps@1",
+      "companySize": 100,
+      "country": "United States Minor Outlying Islands",
+      "additionalInfo": "testing the enterprise account and verifing the expression",
+      "status": "active",
+      "subscriptionDetails": null,
+      "planType": "annually",
+      "price": 202
+    },
+    {
+      "contactId": 272,
+      "firstName": "Enterprise",
+      "lastName": "admin",
+      "email": "tringbytes123@gmail.com",
+      "phoneNumber": "7894561230",
+      "jobTitle": "qa testing software trainee",
+      "companyName": "Tringapps123",
+      "companySize": 100,
+      "country": "United States Minor Outlying Islands",
+      "additionalInfo": "testing the acc",
+      "status": "active",
+      "subscriptionDetails": null,
+      "planType": "annually",
+      "price": 254
+    },
+    {
+      "contactId": 268,
+      "firstName": "Enterprise",
+      "lastName": "admin",
+      "email": "tringapps028@gmail.com",
+      "phoneNumber": "9874563210",
+      "jobTitle": "qa testing software trainee",
+      "companyName": "@#123abc",
+      "companySize": 100,
+      "country": "United States",
+      "additionalInfo": "please update",
+      "status": "active",
+      "subscriptionDetails": null,
+      "planType": "annually",
+      "price": 256.25
+    },
+    {
+      "contactId": 267,
+      "firstName": "Bala",
+      "lastName": "s",
+      "email": "tringapps012@gmail.com",
+      "phoneNumber": "9845632584",
+      "jobTitle": "Admin",
+      "companyName": "Test@1235&",
+      "companySize": 50,
+      "country": "Syrian Arab Republic",
+      "additionalInfo": "this is your account plan please update it",
+      "status": "active",
+      "subscriptionDetails": {
+        "subcriptionStartDate": null,
+        "nextchargeDate": null,
+        "nextcharge": null,
+        "nextBillingType": null,
+        "billingType": null,
+        "lastBillingDate": null,
+        "lastBillingAmount": null,
+        "freeTrialEndDate": 0,
+        "subscriptionCancelDate": 1567794599735,
+        "lastBillingStatus": null,
+        "lastBillingMessage": null,
+        "timezone": null,
+        "freeTrialPeriod": false,
+        "subscriptionCancelled": true
+      },
+      "planType": "monthly",
+      "price": 100.25
+    },
+    {
+      "contactId": 265,
+      "firstName": "test",
+      "lastName": "acc",
+      "email": "tringapps019@gmail.com",
+      "phoneNumber": "7894561230",
+      "jobTitle": "qa testing software trainee",
+      "companyName": "At@143322^^&",
+      "companySize": 500,
+      "country": "United Kingdom",
+      "additionalInfo": "testing ifg accountPlease do not reply to this message. You are receiving this email because you registered with IFGworld. \nIf you do not wish to receive emails from www.ifgworld.com in future please click here to unsubscribe.\n\n ",
+      "status": "pending",
+      "subscriptionDetails": null,
+      "planType": "annually",
+      "price": 2500
+    },
+    {
+      "contactId": 261,
+      "firstName": "Enterprise",
+      "lastName": "admin",
+      "email": "tringapps013@gmail.com",
+      "phoneNumber": "7894561230",
+      "jobTitle": "qa",
+      "companyName": "Tringapps testing",
+      "companySize": 10,
+      "country": "Tajikistan",
+      "additionalInfo": "testing IFG account",
+      "status": "active",
+      "subscriptionDetails": null,
+      "planType": "monthly",
+      "price": 250
+    }
+  ]
+function byField(field) {
+//   return (a, b) => a[field] > b[field] ? 1 : -1;
+return function (a, b) {
+    console.log(a[field], b[field])
+    if(a[field] < b[field]) {
+        console.log("if: ")
+        console.log((a[field] > b[field]))
+        return 1
+    }
+    else {
+        console.log("else: ")
+        console.log((a[field] > b[field]))
+        return -1
+    }
+}
+}
+console.log(users.sort(byField('email')));
+// users.forEach(user => console.log(user.firstName));
+</script>
+</body>
+</html>

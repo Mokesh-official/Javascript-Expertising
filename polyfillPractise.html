@@ -1,0 +1,28 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            let name = {
+                firstName: 'Mokesh',
+                lastName: 'Seshaiah'
+            }
+            let printName = function (district, state, area, street) {
+                console.log(this.firstName+ ' ' +this.lastName+','+district+','+state+','+area+','+street)
+            }
+            let printMyName1 = printName.bind(name, 'Vellore','Tamilnadu')
+            printMyName1('Walaja','Bharathi street');
+
+            Function.prototype.myBind = function (...args) {
+                let obj = this
+                let params = args.slice(1)
+                return function (...args2) {
+                    obj.apply(args[0], [...params, ...args2])
+                }
+            }
+
+            let printMyName2 = printName.myBind(name, 'Vellore','Tamilnadu')
+            printMyName2('Walaja', 'Bharathi street');
+
+        </script>
+        </body>
+</html>

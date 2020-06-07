@@ -1,0 +1,45 @@
+<html>
+  <body>
+    <script>
+      const loggerFunc = () => {
+        console.count("Throttled Function");
+      }
+
+      const throttle = (loggerFunc, limit) => {
+        let flag = true;
+        return function(){
+          let context = this;
+          let args = arguments;
+          if(flag){
+            loggerFunc.apply(context, args);
+            flag = false;
+            setTimeout(() => {
+              flag=true;
+            }, limit);
+          }
+        }
+      }
+
+      const betterLoggerFunction = throttle(loggerFunc, 1000);
+
+      window.addEventListener("resize",betterLoggerFunction);
+
+      // This is the normal Function without Throttling
+      //Check the console for the difference between the calls of Normal Function and the Throttled Function 
+      const normalFunc = () => {
+        console.count("Normal Function");
+      }
+
+      window.addEventListener("resize",normalFunc);
+
+    </script>
+  </body>
+</html>
+throttling is nothing but ignoring the events that calls the function for a particular 
+time interval,
+
+Function will be called on difference of time between two function calls
+
+Throttling should be used on scenrios like
+1. shooting game gunshot()
+2. resize event listeners triggering functions

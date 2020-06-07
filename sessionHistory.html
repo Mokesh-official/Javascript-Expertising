@@ -1,0 +1,24 @@
+<html>
+<body>
+<script>
+var cars = [{ make: 'audi', model: 'r8', year: '2012' }, { make: 'audi', model: 'rs5', year: '2013' }, { make: 'ford', model: 'mustang', year: '2012' }, { make: 'ford', model: 'fusion', year: '2015' }, { make: 'kia', model: 'optima', year: '2012' }],
+    result = cars.reduce(function (r, a) {
+        r[a.make] = r[a.make] || [];
+        r[a.make].push(a);
+        return r;
+    }, Object.create(null));
+
+console.log(result['audi']);
+//   var grouped = _.groupBy(cars, function(car) {
+//   return car.make;
+// });
+
+// console.log(grouped);
+// console.log(grouped[0])
+// var grouped = _.mapValues(_.groupBy(cars, 'name'),
+//                           clist => clist.map(car => _.omit(car, 'make')));
+
+// console.log(grouped);
+</script>
+</body>
+</html>

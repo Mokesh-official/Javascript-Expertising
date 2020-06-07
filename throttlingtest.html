@@ -1,0 +1,25 @@
+<html>
+  <body>
+  <script>
+    function getData () {
+      console.log('get data...')
+    }
+    let throttle = (function () {
+      let flag = true
+      return function () {
+        if(flag) {
+          // clearTimeout(timer)
+          getData ()
+          flag = false
+          setTimeout(() => {
+            flag=true
+          }, 800)
+          // timer = setTimeout(getData, 800)          
+        }
+      }
+    }) ()
+    window.addEventListener('resize', () => throttle())
+  </script>
+
+  </body>
+</html>

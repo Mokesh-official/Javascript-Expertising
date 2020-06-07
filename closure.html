@@ -1,0 +1,25 @@
+<html>
+  <body>
+    <p id='demo'></p>
+    <button type="button" onclick="myFunction()">Count!</button>
+    <script>
+    var add = (function () {
+        var counter = 0;
+        console.log(counter)
+        return function () {
+            console.log(counter)
+            counter +=1;
+            return counter;
+        }
+    }) ();
+
+    function myFunction(){
+        console.log(add)
+      document.getElementById("demo").innerHTML = add();
+    }
+    // document.getElementById("demo").innerHTML = ;
+    </script>
+  </body>
+</html>
+closure is nothing but a self invoking function that returns another function
+inside it with a variable defined in it scope

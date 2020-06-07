@@ -1,0 +1,39 @@
+<html>
+  <body>
+    <script>
+      let name = {
+        firstName: 'Mokesh',
+        lastName: 'Seshaiah'
+      } 
+      let fullname = function (district, tt, state)  {
+        console.log(this.firstName + ' ' +this.lastName+' '+district+' '+tt+' '+state)
+      }
+      let name1 = {
+        firstName: 'sachin',
+        lastName: 'tendulkar'
+      }
+
+      // bind
+      let string1 = fullname.bind(name1, 'tn','tt')
+      console.log(string1)
+      string1('dt')
+      
+      // polyfill - Is a browser fallback made in JS, to make our own bind function for old browser
+
+      Function.prototype.mybind = function (...args) {
+        let obj = this
+        param = args.splice(1)
+        return function (...args1) {
+          obj.apply(args[0], [...param, ...args1])
+        }
+      }
+
+      let string2 = fullname.mybind(name1, 'tn','tt')
+      string2('dt')
+
+
+      </script>
+<!-- <button onClick='press()'>press</button> -->
+<!-- <div id='count'>1</div> -->
+  </body>
+      </html>    
